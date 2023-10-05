@@ -2,6 +2,7 @@
 using SalesWebMvc.Models;
 using System.Diagnostics;
 using SalesWebMvc.Models.ViewModels;
+using Microsoft.AspNetCore.Mvc.Razor.Compilation;
 
 namespace SalesWebMvc.Controllers
 {
@@ -22,6 +23,11 @@ namespace SalesWebMvc.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult Departments()
+        {
+            return RedirectToAction("index", "Departments");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
