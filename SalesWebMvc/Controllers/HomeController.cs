@@ -24,11 +24,7 @@ namespace SalesWebMvc.Controllers
         {
             return View();
         }
-
-        public IActionResult Departments()
-        {
-            return RedirectToAction("index", "Departments");
-        }
+              
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
