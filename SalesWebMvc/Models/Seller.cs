@@ -1,15 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace SalesWebMvc.Models
 {
     public class Seller
     {
         [Display(Name = "#")] public int Id { get; set; }
-        [Display(Name = "Nome")] public string Name { get; set; } = string.Empty;
-        [Display(Name = "e-Mail")] public string Email { get; set; } = string.Empty;
+        [AllowNull][Display(Name = "Nome")] public string Name { get; set; }
+        [Display(Name = "e-Mail")] public string? Email { get; set; }
         [Display(Name = "Data Aviversário")] public DateTime BirthDate { get; set; }
-        [Display(Name = "Salário base")]  public double BaseSalary { get; set; }
-        [Display(Name = "Departamento")] public Department Department { get; set; } = new Department();
+        [Display(Name = "Salário base")] public double BaseSalary { get; set; }
+        [AllowNull][Display(Name = "Departamento")] public Department Department { get; set; }
+        public int DepartmentId { get; set; }
         [Display(Name = "Vendas")] public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
 
@@ -23,7 +26,9 @@ namespace SalesWebMvc.Models
             Department = department;
         }
 
-        public Seller() { }
+        public Seller()
+        {
+        }
 
         public void AddSales(SalesRecord sales)
         {
