@@ -11,8 +11,8 @@ namespace SalesWebMvc.Models
         [Display(Name = "e-Mail")] public string? Email { get; set; }
         [Display(Name = "Data Aviversário")] public DateTime BirthDate { get; set; }
         [Display(Name = "Salário base")] public double BaseSalary { get; set; }
-        [AllowNull][Display(Name = "Departamento")] public Department Department { get; set; }
-        public int DepartmentId { get; set; }
+        [AllowNull] public Department Department { get; set; }
+        [Display(Name = "Departamento")] public int DepartmentId { get; set; }
         [Display(Name = "Vendas")] public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
 

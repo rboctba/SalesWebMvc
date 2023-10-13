@@ -1,51 +1,45 @@
-﻿@model SalesWebMvc.Models.Seller
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model SalesWebMvc.Models.Seller;
 @{
-    ViewData["Title"] = "Exclusão de Vendedor";
+    ViewData["Title"] = "Detalhes do vendedor";
 }
-
 <h2>@ViewData["Title"]</h2>
 <h4>Você confirma a exclusão do vendedor?</h4>
 <div>
-    
+
     <hr />
     <dl class="d-lg-grid">
-      <dt>
+        <dt>
             @Html.DisplayNameFor(model => model.Name)
-      </dt>
-      <dd>
+        </dt>
+        <dd>
             @Html.DisplayFor(model => model.Name)
-      </dd>
-      <dt>
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Email)
-      </dt>
-      <dd>
+        </dt>
+        <dd>
             @Html.DisplayFor(model => model.Email)
-      </dd>
-      <dt>
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.BirthDate)
-      </dt>
-      <dd>
+        </dt>
+        <dd>
             @Html.DisplayFor(model => model.BirthDate)
-      </dd>
-      <dt>
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.BaseSalary)
-      </dt>
-      <dd>
+        </dt>
+        <dd>
             @Html.DisplayFor(model => model.BaseSalary)
-      </dd>
-      <dt>
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Department.Name)
-      </dt>
-      <dd>
+        </dt>
+        <dd>
             @Html.DisplayFor(model => model.Department.Name)
-      </dd>
-      </dl>
-      <form asp-action="Delete"> 
-          <input type="hidden" asp-for="Id" />
-          <input type="submit" value ="Excluir" class = "btn btn-danger" />
-          <a asp-action="Index">Retornar a lista </a>
-     </form>
+        </dd>
+    </dl>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Index">Retornar a lista </a>
+    </a>
 </div>
