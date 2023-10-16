@@ -22,7 +22,7 @@ namespace SalesWebMvc.Data
                 return;
             }
 
-
+            #pragma warning disable IDE0090
             Department d1 = new Department(1, "Computers");
             Department d2 = new Department(2, "Eletronics");
             Department d3 = new Department(3, "Fashion");

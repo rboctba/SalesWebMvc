@@ -102,6 +102,7 @@ namespace SalesWebMvc.Controllers
             }
 
             var departments = await _departmentService.FindAllAsync();
+            #pragma warning disable IDE0090 
             SellerFormViewModel viewModel = new SellerFormViewModel{Seller = obj, Departments = departments };
             return View(viewModel);
         }
