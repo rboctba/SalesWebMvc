@@ -42,12 +42,12 @@ namespace SalesWebMvc
                 app.Services.CreateScope().ServiceProvider.GetRequiredService<SeedingService>().Seed();
             }
 
-            var enUS = new CultureInfo("en-US");
+            var enLocal = CultureInfo.CurrentCulture;
             var localizationOption = new RequestLocalizationOptions
             {
-                DefaultRequestCulture = new RequestCulture(enUS),
-                SupportedCultures = new List<CultureInfo> { enUS },
-                SupportedUICultures = new List<CultureInfo>() { enUS } 
+                DefaultRequestCulture = new RequestCulture(enLocal),
+                SupportedCultures = new List<CultureInfo> { enLocal },
+                SupportedUICultures = new List<CultureInfo>() { enLocal } 
             };
 
             app.UseRequestLocalization(localizationOption);
